@@ -32,6 +32,7 @@ export default function Flashcard({ card, onRight, onWrong }: FlashcardProps) {
         className={`flashcard ${flipped ? 'flashcard--flipped' : ''}`}
         onClick={handleFlip}
         aria-label={flipped ? 'Show Portuguese' : 'Show English'}
+        data-testid="flashcard-flip"
       >
         <div className="flashcard__face flashcard__face--front">
           <span className="flashcard__text">{card.portuguese}</span>
@@ -47,6 +48,7 @@ export default function Flashcard({ card, onRight, onWrong }: FlashcardProps) {
             type="button"
             className="flashcard-actions__btn flashcard-actions__btn--right"
             onClick={handleRight}
+            data-testid="flashcard-right"
           >
             ✅ I got it right
           </button>
@@ -54,6 +56,7 @@ export default function Flashcard({ card, onRight, onWrong }: FlashcardProps) {
             type="button"
             className="flashcard-actions__btn flashcard-actions__btn--wrong"
             onClick={handleWrong}
+            data-testid="flashcard-wrong"
           >
             ❌ I got it wrong
           </button>

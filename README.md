@@ -11,6 +11,14 @@ npm run dev
 
 Open http://localhost:5173
 
+## E2E tests (Playwright)
+
+```bash
+npm run test:e2e
+```
+
+Starts the dev server, runs end-to-end tests in Chromium, then exits. Requires Node 20+.
+
 ## Share with friends (deploy online)
 
 Your friends can use the app in their browser once it’s deployed. Two free options:

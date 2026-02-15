@@ -55,6 +55,7 @@ export default function StudySessionPage() {
         Card {currentIndex + 1} of {cards.length}
       </p>
       <Flashcard
+        key={currentIndex}
         card={currentCard}
         onRight={handleRight}
         onWrong={handleWrong}
