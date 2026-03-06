@@ -4,10 +4,29 @@
   margin: 0 auto;
 }
 
-.home-page h1 {
+.home-title {
   margin: 0 0 0.5rem;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.home-title-line {
+  display: block;
+}
+
+.home-title-line:first-child {
   color: var(--text-h, #08060d);
+}
+
+.home-title-accent {
+  background: linear-gradient(135deg, #15803d 0%, #1d4ed8 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .home-welcome {

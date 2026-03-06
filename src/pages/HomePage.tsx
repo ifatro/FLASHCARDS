@@ -4,7 +4,10 @@ import './HomePage.css'
 export default function HomePage() {
   return (
     <main className="home-page">
-      <h1>European Portuguese Flashcards</h1>
+      <h1 className="home-title">
+        <span className="home-title-line">European Portuguese</span>
+        <span className="home-title-line home-title-accent">Flashcards</span>
+      </h1>
       <p className="home-welcome">Welcome! Choose how you want to practice.</p>
       <nav className="home-nav">
         <Link to="/study" className="home-link home-link-study">

@@ -1,0 +1,39 @@
+---
+description: Testing standards and patterns for this project
+globs: **/*.spec.ts,**/*.test.ts,**/e2e/**
+alwaysApply: false
+---
+
+# Testings
+
+Use these conventions when writing or editing tests.
+
+## Stack
+
+- **E2E**: Playwright (`@playwright/test`)
+- **Location**: `e2e/*.spec.ts`
+
+## Conventions
+
+- Use `test.describe('Feature or page name', () => { ... })` to group related tests.
+- One clear assertion focus per test; avoid testing multiple unrelated behaviors in one test.
+- Prefer role-based selectors: `page.getByRole('link', { name: 'Study Mode' })` over raw text or CSS when possible.
+- Use `page.goto('/')` (or the relevant path) at the start of tests that depend on a specific page.
+- Use regex for flexible text matching when needed: `toHaveURL(/\/study$/)`, `getByRole('heading', { name: /Study Mode — Choose Category/ })`.
+
+## Example
+
+```typescript
+import { test, expect } from '@playwright/test'
+
+test.describe('Feature name', () => {
+  test('does one specific thing', async ({ page }) => {
+    await page.goto('/path')
+    await expect(page.getByRole('heading', { name: 'Expected Title' })).toBeVisible()
+  })
+})
+```
+
+## Running tests
+
+- E2E: `npm run test:e2e` (Playwright).
